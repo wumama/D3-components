@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>饼图（环形图）</title>
+  <style type="text/css">
+    body{
+      background: #040931;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="pie" style="width:400px;height: 300px; position: absolute;">
+  </div>
+
+  <script type="text/javascript" src="../lib/sea.js" ></script>
+  <script type="text/javascript" src="../config.js" ></script>
+  <script type="text/javascript">
+    seajs.use(['../src/pie'],function(pie){
+      var result = {
+        validity: [
+            {
+                "name": "政保",
+                "value": 100
+            },
+            {
+                "name": "吸毒",
+                "value": 120
+            },
+            {
+                "name": "可能铤而走险",
+                "value": 200
+            },
+            {
+                "name": "刑满释放",
+                "value": 125
+            },
+            {
+                "name": "刑嫌",
+                "value": 250
+            }
+        ]
+    }
+      pie.drawPie({
+              data: result.validity,
+              id: "#pie",
+              unit: "人",
+              width: "500",
+              height: "500"
+            })
+    })
+
+  </script>
+  
+</body>
+
+</html>
