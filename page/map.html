@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>地图</title>
+  <style type="text/css">
+    #tooltip{
+      position: absolute;
+      width: 160px;
+      height: 50px;
+      background: #131f63;
+      border-left: 3px solid #00ffff;
+      border-radius: 5px;
+      text-align: left;
+      color: #fff;
+      font-size: 18px;
+      padding-top: 10px;
+      padding-left: 12px;
+    }
+    #mapValue{
+      color: #ebd912;
+    }
+    #back-btn{
+      position: absolute;
+      width: 80px;
+      height: 50px;
+      top: 20px;
+      right: 20px;
+      background: #131f63;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="map" style="width:800px;height:800px;"></div>
+  <div id="back-btn" style="display:none;" code="chongqing">返回</div>
+  
+  <script type="text/javascript" src="../lib/sea.js"></script>
+  <script type="text/javascript" src="../config.js"></script>
+  <script type="text/javascript">
+    seajs.use(['../src/map'],function(map){
+      var data = [
+              {
+                  "name": "重庆市垫江县",
+                  "code": "500231",
+                  "value": 16,
+                  "geoCoord": {
+                      "horizontal": 107.37105713,
+                      "vertical": 30.24332639
+                  }
+              },
+              {
+                  "name": "重庆市荣昌县",
+                  "code": "500226",
+                  "value": 15,
+                  "geoCoord": {
+                      "horizontal": 105.45724239,
+                      "vertical": 29.45250876
+                  }
+              },
+              {
+                  "name": "重庆市大渡口区",
+                  "code": "500104",
+                  "value": 14,
+                  "geoCoord": {
+                      "horizontal": 106.46596099,
+                      "vertical": 29.45440755
+                  }
+              },
+              {
+                  "name": "重庆市石柱县",
+                  "code": "500240",
+                  "value": 13,
+                  "geoCoord": {
+                      "horizontal": 108.17516001,
+                      "vertical": 30.09682273
+                  }
+              }
+      ]
+      var opt = {
+        width: '600',
+        height: '600',
+        id: 'map',
+        unit: '人次'
+      }
+      map.init(opt, data)
+    })
+  </script>
+</body>
+</html>

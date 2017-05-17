@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数据监控</title>
+</head>
+<body>
+<div id="monitor"></div>
+  
+</body>
+  <script type="text/javascript" src="../lib/sea.js" ></script>
+  <script type="text/javascript" src="../config.js" ></script>
+  <script type="text/javascript">
+    seajs.use(['../src/monitorScreen'], function(home){
+      var data = {
+        validity: [
+          {
+            'name': '国保',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '技侦',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '情报中心',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '指挥中心',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '法制',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '治安',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '刑侦',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          },
+          {
+            'name': '网安',
+            'contribution': '90%',
+            'collection': '40%',
+            'provide': '30%'
+          }
+        ]
+      }
+      home.init({
+        id: 'monitor',
+        data: data.validity,
+        width: '800',
+        height: '800'
+      })
+    })
+  </script>
+</html>
